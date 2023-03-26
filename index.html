@@ -24,72 +24,130 @@
     <title>Devchallenges</title>
 
     <style>
-      body {
-        font-family: "Poppins", sans-serif;
+
+@font-face {
+font-family: "CustomFont";
+src: url("fonts/webfontkit-20230326-130642/spacemono-regular-webfont.woff");
+}
+
+html, body{
+        font-family: CustomFont, sans-serif;
+        width: 100%;
+        height: 100%;
+      }
+      .container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        min-height: 100%;
       }
 
-      ul {
-        padding-left: 24px;
+      .row {
+        display: flex;
+        flex-wrap: wrap;
+        height:100%;
+        justify-content: center;
       }
 
-      li {
-        margin-bottom: 8px;
+      .flex-item-left {
+        display: flex;
+        padding-right:5vw;
+        padding-left:5vw;
+        flex: 5;
+        height: 100%;
+        align-items: center;
+        justify-content: center;
       }
 
-      .welcome {
-        max-width: 800px;
-        margin: 0 auto;
+      .flex-item-right {
+       
+        padding-right:5vw;
+        padding-left:5vw;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        flex: 5;
+        height: 100%;
+      }
+      .flex-item-right > p {
+        width: 50%;
       }
 
-      .welcome-text {
-        margin-top: 30vh;
-        font-weight: 500;
+      @media (max-width: 400px) {
+        .flex-item-right, .flex-item-left {
+          flex: 100%;
+         
+        }
+
+        .head{
+          margin-bottom: 5vh;
+        }
+        .row {
+          display: flex;
+          height:50%;
+      }
+      .flex-item-right > p {
+        width: 100%;
+      }
       }
 
-      .welcome-text p {
-        font-size: 1rem;
-        font-weight: 400;
+      .responsive {
+        flex: auto;
+        width: 80%;
+        height: auto;
       }
 
-      .welcome-text h1 {
-        font-size: 1.5rem;
+      .btn-home {
+        padding: 20px;
+        font-size: smaller;
+        color: white;
+        text-transform: uppercase;
+        background-color:#333333;
+        width: fit-content;
+      }
+      .head {
+        flex-shrink: 0;
       }
 
-      .welcome-text a {
-        color: #f7542e;
+      .maincontent {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex: 1 0 auto;
+      }
+      .footer {
+        flex-shrink: 0;
+        text-align: center;
+        margin-bottom: 2vh;
       }
     </style>
   </head>
   <body>
-    <div class="welcome">
-      <div class="welcome-text">
-        <h1>
-          Welcome to
-          <a href="https://devchallenges.io/" target="_blank"
-            >devchallenges.io</a
-          >
-        </h1>
+    <div class="container">
+      <div class="head">
 
-        <p>
-          If you have any questions, don't hesitate to ask on Discord. Here are
-          7 general steps to complete the challenge:
-        </p>
+      <div>404 Not Found</div>
+      
       </div>
-
-      <ul>
-        <li><b>Step 1:</b> Create a new repository on github</li>
-        <li><b>Step 2:</b> Copy resources, README.md to your repository</li>
-        <li>
-          <b>Step 3:</b> Login to Figma to checkout font, color, spacing,..
-        </li>
-        <li><b>Step 4:</b> Complete all user stories</li>
-        <li><b>Step 5:</b> Update README.md</li>
-        <li><b>Step 6:</b> Deploy your app and submit your solution</li>
-        <li>
-          <b>Step 7:</b> Share your solution on Discord, Twitter and other
-          platforms to ask for feedback
-        </li>
-      </ul>
+      <div class="maincontent">
+        <div class="row">
+        <div class="flex-item-left">
+          <img src="Scarecrow.png" class="responsive">
+        </div>
+        <div class="flex-item-right">
+          <h1>
+           I have bad news for you
+          </h1>
+          <p>The page you are looking for might be removed or is temporarily unavailable</p>
+          <div class="btn-home">Back to homepage</div>
+        </div>
+      </div>
+    </div>
+    
+    
+      <div class="footer">
+        Created by <strong>Kurt Van Aken</strong> - devChallenges.io
+      </div>
     </div>
   </body>
 </html>
